@@ -4,6 +4,7 @@ from django.db import models
 
 #hello this is supreme 
 
+#hello lado khau aba pull gara
 
 class Category(models.Model):
    Name = models.CharField(max_length=50)
