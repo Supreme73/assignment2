@@ -6,6 +6,8 @@ from django.db import models
 
 #hello lado khau aba pull gara
 
+#timi muji chai lado khau aba push gara
+
 class Category(models.Model):
    Name = models.CharField(max_length=50)
    #image = models.ImageField()
