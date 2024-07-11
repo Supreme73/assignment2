@@ -1,0 +1,31 @@
+{% extends 'homepage/navbar.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="hero-img">
+        <img src="{% static 'assests/wizkid_banner/banner.jpg' %}" alt="">
+    </div>
+    <h3 class="text-hero">everyday wears</h3>
+</section>
+<!--category-->
+<section class="categories">
+    {% for category in categories %}
+    <div class="category" data-url="{% url 'category' category.id %}">
+        <img src="{{ category.Image.url }}" alt="{{ category.Name }}">
+        <div class="overlay">{{ category.Name }}</div>
+    </div>
+    {% endfor %}
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var categories = document.querySelectorAll('.category');
+    categories.forEach(function(category) {
+        category.addEventListener('click', function() {
+            window.location.href = this.getAttribute('data-url');
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'homepage/navbar.html' %}
+{% block content %}
+<section class="new-release">
+    {% for product in products %}
+  <div class="header-text">
+    <h3>{{ product.category.Name}}</h3>
+
+  </div>
+  <hr>
+  <div class="cart-container">
+    
+    <div class="cart-block">
+      <div class="product-image">
+        <img src="{{ product.image.url }}" alt="{{ product.Name }}">
+      </div>
+      <div class="product-details">
+        <h4 class="product-name">{{ product.Name }}</h4>
+        <p>{{ product.Description }}</p>
+        <p class="price">${{ product.Price }}</p>
+        <button>Add to cart</button>
+      </div>
+    </div>
+    
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}
